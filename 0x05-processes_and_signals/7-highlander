@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# displays "To infinity and beyond" indefinitely.
+#+ displays "echo I am invincible!!!" when trying to kill it with SEGTERM
+trap "echo I am invincible!!!" SIGTERM
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
