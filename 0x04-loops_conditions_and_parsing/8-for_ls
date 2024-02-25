@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Displays the content of the current directory in a list format
+#+ Where only the part of the name after the first dash is displayed
+
+for file in *; do
+    print_all=0
+
+    for (( i=0; i<${#file}; i++ )); do
+        if [ $print_all -eq 1 ]; then
+            echo -n "${file:$i:1}"
+        elif [ "${file:$i:1}" = '-' ]; then
+            print_all=1
+        fi
+    done
+
+    if [ $print_all -eq 1 ]; then
+        echo
+    fi
+done
