@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-regex = /hbt?n/
+regex = /hb?tn/
 match = ARGV[0].scan(regex)
 
 for element in match do
