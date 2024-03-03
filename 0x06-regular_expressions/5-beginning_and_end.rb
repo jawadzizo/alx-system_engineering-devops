@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-regex = /^h\w+n$/
+regex = /^h\wn$/
 match = ARGV[0].scan(regex)
 
 for element in match do
