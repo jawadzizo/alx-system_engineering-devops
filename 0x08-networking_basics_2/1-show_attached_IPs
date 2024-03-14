@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# displays all active IPv4 IPs on the machine it’s executed on
-
-ifconfig | grep -E 'inet\s' | cut -d " " -f 10
