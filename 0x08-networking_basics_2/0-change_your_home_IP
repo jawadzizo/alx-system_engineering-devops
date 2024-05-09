@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 sed -E 's/127.0.0.1\s+localhost/127.0.0.2  localhost/g' /etc/hosts > hosts_tmp
 echo "8.8.8.8  facebook.com" >> hosts_tmp
 cat hosts_tmp > /etc/hosts
