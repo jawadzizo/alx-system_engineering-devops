@@ -1,0 +1,5 @@
+HOST 464650-web-01
+  HostName 34.203.33.120
+  User ubuntu
+  BatchMode yes
+  IdentityFile ~/.ssh/school
