@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# installs nginx, and adds a new custom header 'X-Served-By'
+
+apt update
+apt install -y nginx
+ufw app list
+ufw allow 'Nginx HTTP'
+
+echo "server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        add_header X-Served-By $HOSTNAME;
+}" > /etc/nginx/sites-available/default
+
+service nginx restart
