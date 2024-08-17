@@ -16,7 +16,11 @@ def top_ten(subreddit):
         print("None")
         return
 
-    results = response_headers.json()["data"]
+    try:
+        results = response_headers.json()["data"]
+    except Exception:
+        print("None")
+        return
 
     for post in results["children"]:
         print(post["data"]["title"])
