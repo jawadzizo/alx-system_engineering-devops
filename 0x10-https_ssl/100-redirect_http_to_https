@@ -1,0 +1,21 @@
+defaults
+  mode http
+  timeout client 10s
+  timeout connect 5s
+  timeout server 10s
+  timeout http-request 10s
+
+  stats enable
+  stats uri /stats
+  stats realm Haproxy\ Statistics
+  stats auth user:password
+
+frontend myfrontend
+  bind 0.0.0.0:80
+  bind 0.0.0.0:443 ssl crt /etc/letsencrypt/live/www.jawadalx.tech/haproxy.pem
+  http-request redirect scheme https code 301 unless { ssl_fc }
+  default_backend myservers
+
+backend myservers
+  server server1 34.203.33.120:80 check
+  server server2 54.167.185.108:80 check
