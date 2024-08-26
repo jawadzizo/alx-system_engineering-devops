@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# shows the user given as argument
+id -un $1
